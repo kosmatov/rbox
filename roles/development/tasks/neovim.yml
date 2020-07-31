@@ -1,0 +1,6 @@
+---
+- name: Install neovim
+  dnf: name=neovim state=latest
+
+- name: Install neovim-remote
+  pip: name=neovim-remote state=latest

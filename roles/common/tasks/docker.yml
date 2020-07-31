@@ -1,0 +1,31 @@
+---
+- name: Add docker repo
+  template: src=templates/docker-ce.repo dest=/etc/yum.repos.d/docker-ce.repo
+
+- name: docker-ce installation
+  debug:
+    msg: there is no repo for centos 8 yet, if next command fail, install docker-ce inside box by 'sudo dnf install --nobest docker-ce'
+
+- name: Add docker-ce
+  dnf: name=docker-ce state=latest update_cache=true
+
+- name: Detect docker-compose latest release tag
+  shell:
+    cmd: curl -ILs https://github.com/docker/compose/releases/latest | grep releases/tag | cut -d/ -f8
+    warn: false
+  register: docker_compose_release_tag
+  changed_when: false
+
+- name: Add docker-compose
+  shell:
+    cmd: curl -L "https://github.com/docker/compose/releases/download/{{ docker_compose_release_tag.stdout }}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    creates: /usr/local/bin/docker-compose
+
+- name: Start docker service
+  service: name=docker enabled=yes state=started
+
+- name: Add vagrant to docker group
+  user:
+    name: vagrant
+    groups: docker
+    append: yes

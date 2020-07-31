@@ -1,0 +1,28 @@
+---
+- name: Install base packages
+  dnf:
+    state: latest
+    name:
+      - epel-release
+      - zsh
+      - git
+      - curl
+      - tcpdump
+      - telnet
+      - net-tools
+      - bind-utils
+      - kernel-devel
+
+- name: Detect ZSH path
+  shell: which zsh
+  register: which_zsh
+  changed_when: false
+
+- name: Change user shell
+  user: name=vagrant shell={{ which_zsh.stdout }}
+
+- name: Add vagrant to dialout group
+  user:
+    name: vagrant
+    groups: dialout
+    append: yes
