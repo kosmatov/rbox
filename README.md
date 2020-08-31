@@ -20,4 +20,3 @@ Vagrant box for software development provisioned by Ansible
 <a href="http://ansible.com" title="Ansible"><img src="https://github.com/kosmatov/rbox/blob/master/samples/ansible-logo.png" height="100"></a>
 <a href="http://nginx.org" title="Nginx"><img src="https://github.com/kosmatov/rbox/blob/master/samples/nginx-logo.png" height="100"></a>
 <a href="http://docker.io" title="Docker"><img src="https://github.com/kosmatov/rbox/blob/master/samples/docker-logo.png" height="100"></a>
-<a href="https://github.com/kosmatov/dotfiles" title="Dotfiles"><img src="https://github.com/kosmatov/rbox/blob/master/samples/dotfiles-logo.png" height="100"></a>
