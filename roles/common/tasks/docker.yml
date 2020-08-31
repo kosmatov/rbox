@@ -8,6 +8,7 @@
 
 - name: Add docker-ce
   dnf: name=docker-ce state=latest update_cache=true
+  ignore_errors: yes
 
 - name: Detect docker-compose latest release tag
   shell:

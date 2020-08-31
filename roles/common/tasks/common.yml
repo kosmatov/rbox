@@ -12,6 +12,7 @@
       - net-tools
       - bind-utils
       - kernel-devel
+      - chrony
 
 - name: Detect ZSH path
   shell: which zsh
@@ -26,3 +27,6 @@
     name: vagrant
     groups: dialout
     append: yes
+
+- name: Enable chronyd
+  service: name=chronyd enabled=yes state=started
