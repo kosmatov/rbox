@@ -8,5 +8,11 @@ box_up: up mount
 up:
 	vagrant up
 
-mount:
+mount: home
 	df | grep vagrant || sudo mount -t nfs -o resvport,rw,soft 10.0.1.13:/home/vagrant home/
+
+umount:
+	sudo umount home/
+
+home:
+	mkdir home

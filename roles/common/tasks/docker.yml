@@ -2,13 +2,15 @@
 - name: Add docker repo
   template: src=templates/docker-ce.repo dest=/etc/yum.repos.d/docker-ce.repo
 
-- name: docker-ce installation
-  debug:
-    msg: there is no repo for centos 8 yet, if next command fail, install docker-ce inside box by 'sudo dnf install --nobest docker-ce'
-
 - name: Add docker-ce
-  dnf: name=docker-ce state=latest update_cache=true
-  ignore_errors: yes
+  block:
+    - name: Add latest
+      dnf: name=docker-ce state=latest update_cache=true
+  rescue:
+    - name: Add --nobest
+      shell:
+        cmd: dnf install --nobest docker-ce
+        warn: false
 
 - name: Detect docker-compose latest release tag
   shell:
