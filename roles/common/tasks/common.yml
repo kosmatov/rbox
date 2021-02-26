@@ -30,3 +30,6 @@
 
 - name: Enable chronyd
   service: name=chronyd enabled=yes state=started
+
+- name: Add exports
+  template: src=templates/exports dest=/etc/exports
