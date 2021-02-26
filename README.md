@@ -7,7 +7,8 @@ Vagrant box for software development provisioned by Ansible
 
 * [Download](https://www.vagrantup.com/downloads.html) and install `vagrant`
 * Clone this repo: `git clone git://github.com/kosmatov/rbox.git && cd rbox`
-* Run `vagrant up && vagrant ssh`
+* Run `make up` to install
+* Run `make enter` to enter into the box
 
 ### What inside
 
