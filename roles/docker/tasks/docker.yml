@@ -9,8 +9,9 @@
   rescue:
     - name: Add --nobest
       shell:
-        cmd: dnf install --nobest docker-ce
+        cmd: dnf -y install --nobest docker-ce
         warn: false
+      ignore_errors: true
 
 - name: Detect docker-compose latest release tag
   shell:

@@ -8,11 +8,14 @@ box_up: up mount
 up:
 	vagrant up
 
-mount: home
-	df | grep vagrant || sudo mount -t nfs -o resvport,rw,soft 10.0.1.13:/home/vagrant home/
+mount: vagrant-home
+	df | grep vagrant || sudo mount -t nfs -o resvport,rw,soft 10.0.1.13:/home/vagrant ~/vagrant-home/
 
 umount:
-	sudo umount home/
+	df | grep vagrant && diskutil unmount ~/vagrant-home
 
-home:
-	mkdir home
+vagrant-home:
+	mkdir -p ~/vagrant-home
+
+halt: umount
+	vagrant halt

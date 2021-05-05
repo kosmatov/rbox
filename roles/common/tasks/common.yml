@@ -13,6 +13,7 @@
       - bind-utils
       - kernel-devel
       - chrony
+      - make
 
 - name: Detect ZSH path
   shell: which zsh

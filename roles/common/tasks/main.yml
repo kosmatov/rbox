@@ -1,7 +1,6 @@
 ---
+- include: disks.yml
 - include: common.yml
-  become: true
-- include: docker.yml
   become: true
 - include: nginx.yml
   become: true

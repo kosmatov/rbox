@@ -1,6 +1,14 @@
 ---
-- name: Install neovim
-  dnf: name=neovim state=latest
+- name: Install neovim and dependencies
+  dnf:
+    name: 
+      - neovim
+      - gcc
+      - python36-devel
+      - python3-psutil
+    state: latest
+  become: true
 
 - name: Install neovim-remote
   pip: name=neovim-remote state=latest
+  become: true
