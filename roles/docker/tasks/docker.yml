@@ -25,6 +25,11 @@
     cmd: curl -L "https://github.com/docker/compose/releases/download/{{ docker_compose_release_tag.stdout }}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     creates: /usr/local/bin/docker-compose
 
+- name: Make docker-compose executable
+  file:
+    path: /usr/local/bin/docker-compose
+    mode: '755'
+
 - name: Start docker service
   service: name=docker enabled=yes state=started
 
