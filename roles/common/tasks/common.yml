@@ -34,3 +34,6 @@
 
 - name: Add exports
   template: src=templates/exports dest=/etc/exports
+
+- name: Enable NFS service
+  service: name=nfs-server enabled=yes state=started

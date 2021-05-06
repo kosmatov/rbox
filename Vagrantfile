@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 vminfo = `VBoxManage showvminfo $(VBoxManage list vms | grep rbox | cut -d\{ -f2 | cut -d\} -f1 | head -1)`
-home_disk_file = 'home.vdi'
-docker_disk_file = 'docker.vdi'
+home_disk_file = '../VirtualBox VMs/rbox-home.vdi'
+docker_disk_file = '../VirtualBox VMs/rbox-docker.vdi'
 
 Vagrant.configure("2") do |config|
   config.vm.hostname = "rbox"
