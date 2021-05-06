@@ -12,6 +12,7 @@
         cmd: dnf -y install --nobest docker-ce
         warn: false
       ignore_errors: true
+      changed_when: false
 
 - name: Detect docker-compose latest release tag
   shell:

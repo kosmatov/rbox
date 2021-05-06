@@ -7,8 +7,6 @@
       - python36-devel
       - python3-psutil
     state: latest
-  become: true
 
 - name: Install neovim-remote
   pip: name=neovim-remote state=latest
-  become: true
