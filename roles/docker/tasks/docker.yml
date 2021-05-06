@@ -1,6 +1,8 @@
 ---
 - name: Add docker repo
-  template: src=templates/docker-ce.repo dest=/etc/yum.repos.d/docker-ce.repo
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
 
 - name: Add docker-ce
   block:
