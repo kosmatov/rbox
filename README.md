@@ -12,7 +12,7 @@ Vagrant box for software development provisioned by Ansible
 
 ### What inside
 
-<a href="http://centos.org" title="CentOS"><img src="https://github.com/kosmatov/rbox/blob/master/samples/centos-logo.png" height="100"></a>
+<a href="http://centos.org" title="CentOS"><img src="https://github.com/kosmatov/rbox/blob/master/samples/centos-logo.png" height="100"></a><br/>
 <a href="http://zsh.org" title="ZSH"><img src="https://github.com/kosmatov/rbox/blob/master/samples/zsh-logo.png" height="100"></a>
 <a href="http://github.com/robbyrussell/oh-my-zsh" title="Oh-my-zsh"><img src="https://github.com/kosmatov/rbox/blob/master/samples/oh-my-zsh.png" height="100"></a>
 <a href="http://git-scm.com" title="Git"><img src="https://github.com/kosmatov/rbox/blob/master/samples/git-logo.png" height="100"></a>
